@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f5f3f3;
+  --bg-card: #e1e1e6;
+  --bg-card-active: #02799d;
+  --text-color: #323238;
+
+  --inner-card-active: #ffffff;
+
+  --shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: calc(100% - 5vh) 1vh;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+#timer {
+  font-size: 12.6rem;
+
+  justify-content: right;
+
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  gap: 4rem;
+
+  margin-top: 15.0rem;
+}
+
+#timer, #controls, #cards {
+  position: absolute;
+  width: 32.1rem;
+  height: 21.3rem;
+  left: 23.3rem;
+  top: 18.4rem;
+  
+  padding-top: 10rem;
+  padding-left: 50.0rem;
+}
+
+#cards {
+  width: 308px;
+  height: 336px;
+  left: 400px;
+  top: 150px;
+
+  gap: 3.2rem;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  grid-template-areas: 
+  'A B'
+  'C D';
+}
+
+.card01,
+.card02,
+.card03,
+.card04 {
+  position: relative;
+  width: 13.8rem;
+  height: 15.2rem;
+
+  background-color: var(--bg-card);
+  filter: var(--shadow);
+
+  border-radius: 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4.7rem 4.8rem;
+}
+
+.card-active {
+  background-color: var(--bg-card-active);
+  transition: 0.5s;
+}
+
+.card-active > svg path {
+  fill: var(--inner-card-active);
+  transition: 0.5s;
+}
+
+#cards div:nth-child(1) {
+  grid-area: A;
+}
+
+#cards div:nth-child(2) {
+  grid-area: B;
+}
+
+#cards div:nth-child(3) {
+  grid-area: C;
+}
+
+#cards div:nth-child(4) {
+  grid-area: D;
+}
